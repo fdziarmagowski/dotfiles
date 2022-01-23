@@ -1,10 +1,9 @@
 call plug#begin()
-    Plug 'arcticicestudio/nord-vim'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'itchyny/lightline.vim'
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-sensible'
     Plug 'vimwiki/vimwiki'
-    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
 " theme
