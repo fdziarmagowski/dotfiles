@@ -1,0 +1,9 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
+image/jpeg=feh.desktop;
+image/png=feh.desktop;
+image/gif=feh.desktop;
+image/svg+xml=inkscape.desktop;
+image/x-portable-anymap=feh.desktop;
+image/tiff=feh.desktop;
+audio/x-vorbis+ogg=mpv.desktop;

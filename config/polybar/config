@@ -1,0 +1,120 @@
+;==========================================================
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;==========================================================
+
+[colors]
+; https://github.com/enkia/tokyo-night-vscode-theme#color-palette
+foreground-default  = #9aa5ce
+foreground-focused  = #7dcfff
+foreground-occupied = #9aa5ce
+foreground-empty    = #565f89
+foreground-urgent   = #f7768e
+background-default  = #1a1b26
+border              = #414868
+
+[bar/default]
+monitor             = DisplayPort-0
+dpi-x               = 117
+dpi-y               = 117
+width               = 2552
+height              = 24
+offset-x            = 4
+offset-y            = 2
+radius              = 0
+fixed-center        = true
+
+background          = ${colors.background-default}
+foreground          = ${colors.foreground-default}
+
+border-bottom-size  = 1
+border-color        = ${colors.border}
+
+padding-left        = 1
+padding-right       = 1
+
+module-margin-left  = 1
+module-margin-right = 1
+
+font-0              = Clear Sans:pixelsize=9:style=bold;1
+font-1              = Clear Sans:pixelsize=8.5:style=bold;1
+font-2              = DejaVu Sans:pixelsize=12:style=Bold;3
+
+modules-left        = bspwm xwindow
+modules-center      = date
+modules-right       = xkeyboard
+
+tray-position       = right
+tray-padding        = 2
+
+wm-restack          = bspwm
+
+override-redirect   = true
+
+cursor-click        = pointer
+cursor-scroll       = ns-resize
+
+[module/xwindow]
+type             = internal/xwindow
+label            = %title:0:100:...%
+label-font       = 2
+label-foreground = ${colors.foreground-occupied}
+
+[module/xkeyboard]
+type        = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix            = 
+format-prefix-foreground = ${colors.foreground-default}
+
+label-layout = %layout%
+
+label-indicator-padding = 0
+label-indicator-margin  = 0
+label-indicator-font    = 2
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %name%
+label-focused-foreground  = ${colors.foreground-focused}
+label-focused-padding     = 0
+label-focused-font        = 3
+
+label-occupied = %name%
+label-occupied-foreground = ${colors.foreground-occupied}
+label-occupied-padding    = 0
+label-occupied-font       = 3
+
+label-urgent = %name%!
+label-urgent-background   = ${colors.foreground-urgent}
+label-urgent-padding      = 0
+label-urgent-font         = 3
+
+label-empty = %name%
+label-empty-foreground    = ${colors.foreground-empty}
+label-empty-padding       = 0
+label-empty-font          = 3
+
+[module/date]
+type          = internal/date
+interval      = 5
+date          = " %x"
+time          = %H:%M
+format-prefix = 
+label         = %date% %time%
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top    = 0
+margin-bottom = 0
+
+; vim:ft=dosini
